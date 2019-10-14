@@ -7,7 +7,7 @@ public class Person extends NameHolder
 	public Person() throws NameException
 	{
 		String first = "Bo";
-		String last = "Alex";
+		String last = "Smith";
 		this.lastName = last;
 		super.setFirstName(first);
 	}
