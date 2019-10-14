@@ -39,7 +39,7 @@ public class PersonTest {
 	public void describeTest() {
 		try {
 			String firstName = "Bo";
-			String lastName = "Smith";
+			String lastName = "Alex";
 			Person x = new Person(firstName, lastName);
 			
 			String expected = "***" + "First Name: " + firstName

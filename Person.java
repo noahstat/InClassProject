@@ -6,16 +6,16 @@ public class Person extends NameHolder
 	
 	public Person() throws NameException
 	{
-		String temp1 = "Bo";
-		String temp2 = "Smith";
-		this.lastName = temp2;
-		super.setFirstName(temp1);
+		String first = "Bo";
+		String last = "Alex";
+		this.lastName = last;
+		super.setFirstName(first);
 	}
 	
 	public Person(String firstName, String lastName) throws NameException
 	{
-		super.setFirstName(lastName);
-		this.lastName = firstName;
+		super.setFirstName(firstName);
+		this.lastName = lastName;
 	}
 	
 	@Override
@@ -24,7 +24,6 @@ public class Person extends NameHolder
 		String description = "***First Name: " + super.getFirstName() +
 				" Last Name: " + lastName + "***";
 		return description; //not in life tho!!!
-		// TODO Auto-generated method stub
 
 	}
 
