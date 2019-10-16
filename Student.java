@@ -17,10 +17,29 @@ public class Student extends Person implements Comparable<Student> {
 		// TODO Auto-generated constructor stub
 	}
 	
+	public Student(String firstName, String lastName, Integer rating) throws NameException
+	{
+		super(firstName, lastName);
+		this.rating = rating;
+	}
+	
 	@Override
 	public int compareTo(Student o) {
-		// TODO Auto-generated method stub
-		return 0;
+		
+		int comparison = rating - o.getRating();
+		if(comparison < 0)
+		{
+			return -1;
+		}
+		else if(comparison > 0)
+		{
+			return 1;
+		}
+		else 
+		{
+			return 0;
+		}
+		
 	}
 	
 	public Integer getRating()
@@ -28,4 +47,8 @@ public class Student extends Person implements Comparable<Student> {
 		return new Integer(rating);
 	}
 	
+	public void setRating(Integer newRating)
+	{
+		rating = newRating;
+	}
 }
