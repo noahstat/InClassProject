@@ -1,5 +1,6 @@
 import static org.junit.Assert.*;
 
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -29,18 +30,36 @@ public class StudentTest {
 	public void testCompareTo() throws NameException {
 		Student firstStudent = new Student("x", "Y", 2);
 		Student secondStudent = new Student("x", "Y", 3);
+		boolean result = false;
 
 		int actual = secondStudent.compareTo(firstStudent);
-		int expected = 1;
+		// should be greater than zero
+		if (actual > 0) {
+			result = true;
+		}
 
-		assertEquals(expected, actual);
+		assertTrue(result);
 
+		result = false;
 		Student student = new Student("x", "Y", 5);
-
-		expected = -1;
 		actual = secondStudent.compareTo(student);
-		assertEquals(expected, actual);
+		//should be less than zero
 
+		if (actual < 0) {
+			result = true;
+		}
+
+		assertTrue(result);
+
+		result = false;
+		Student studentX = new Student("x", "Y", 3);
+		actual = secondStudent.compareTo(studentX);
+		//should be equal to zero
+		if (actual == 0) {
+			result = true;
+		}
+
+		assertTrue(result);
 	}
 
 	@Test
@@ -49,10 +68,10 @@ public class StudentTest {
 		Integer rating = expected;
 		String firstName = "Alex";
 		String lastName = "Bo";
-		
+
 		Student s = new Student(firstName, lastName, rating);
 		Integer actual = s.getRating();
-		
+
 		assertEquals(expected, actual);
 	}
 
