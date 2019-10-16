@@ -49,8 +49,10 @@ public class StudentTest {
 		Integer rating = expected;
 		String firstName = "Alex";
 		String lastName = "Bo";
+		
 		Student s = new Student(firstName, lastName, rating);
 		Integer actual = s.getRating();
+		
 		assertEquals(expected, actual);
 	}
 
