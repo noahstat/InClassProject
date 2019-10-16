@@ -1,29 +1,28 @@
 
-public class Person extends NameHolder 
-{
-
+public class Person extends NameHolder {
 	private String lastName;
 	
-	public Person() throws NameException
-	{
-		String first = "Bo";
-		String last = "Smith";
-		this.lastName = last;
-		super.setFirstName(first);
+	
+	public Person() throws NameException {
+		String temp1 = "Bo";
+		String temp2 = "Alex";
+		lastName = temp1;
+		super.setFirstName(temp2);
+		
 	}
 	
-	public Person(String firstName, String lastName) throws NameException
-	{
-		super.setFirstName(firstName);
+	public Person(String firstName, String lastName) throws NameException {
 		this.lastName = lastName;
+		
+		super.setFirstName(firstName);
 	}
+	
 	
 	@Override
-	public String describeSelf()
-	{
-		String description = "***First Name: " + super.getFirstName() +
+	public String describeSelf() {
+		String description = "*** First Name: " + super.getFirstName() +
 				" Last Name: " + lastName + "***";
-		return description; //not in life tho!!!
+		return description;
 
 	}
 

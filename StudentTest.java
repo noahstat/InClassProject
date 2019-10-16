@@ -9,17 +9,16 @@ public class StudentTest {
 
 	@Before
 	public void setUp() throws Exception {
-
 	}
 
 	@Test
 	public void testStudent() {
-		Student s;
-		Integer rating;
 		try {
-			s = new Student();
-			rating = s.getRating();
+			Student s = new Student();
+
+			Integer rating = s.getRating();
 			Integer expected = INITIAL_RATING;
+
 			assertEquals(expected, rating);
 		} catch (NameException e) {
 			fail();
@@ -27,53 +26,32 @@ public class StudentTest {
 	}
 
 	@Test
-	public void testSetRating() {
+	public void testCompareTo() throws NameException {
+		Student firstStudent = new Student("x", "Y", 2);
+		Student secondStudent = new Student("x", "Y", 3);
+
+		int actual = secondStudent.compareTo(firstStudent);
+		int expected = 1;
+
+		assertEquals(expected, actual);
+
+		Student student = new Student("x", "Y", 5);
+
+		expected = -1;
+		actual = secondStudent.compareTo(student);
+		assertEquals(expected, actual);
 
 	}
 
 	@Test
-	public void testGetRating() {
-		try {
-			Integer expected = 4;
-			Integer rating = expected;
-			String firstName = "Alex";
-			String lastName = "Bo";
-
-			Student s = new Student(firstName, lastName, rating);
-			Integer actual = s.getRating();
-			assertEquals(expected, actual);
-
-		} catch (NameException e) {
-			fail();
-		}
-
-	}
-
-	@Test
-	public void testCompareTo() {
-		try {
-			Student firstStudent = new Student("X", "Y", 2);
-			Student secondStudent = new Student("X", "Y", 3);
-			
-			int actual = secondStudent.compareTo(firstStudent);
-			int expected = 1;
-			
-			assertEquals(expected, actual);
-			
-			Student tudent = new Student("X", "Y", 5);
-			
-			actual = secondStudent.compareTo(tudent);
-			expected = -1;
-			
-			assertEquals(expected, actual);
-			
-		} catch (NameException e) {
-			fail();
-		}
-		
-		
-		
-		
+	public void testGet() throws NameException {
+		Integer expected = 4;
+		Integer rating = expected;
+		String firstName = "Alex";
+		String lastName = "Bo";
+		Student s = new Student(firstName, lastName, rating);
+		Integer actual = s.getRating();
+		assertEquals(expected, actual);
 	}
 
 }
